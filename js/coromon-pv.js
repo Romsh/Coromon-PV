@@ -9,6 +9,10 @@ if(theme === null){
 
 
 $(document).ready(function(){
+
+    var link = "https://spreadsheets.google.com/feeds/cells/14tV5IOzdzhvVspUqfyUPmjf_hRN1Q9tuQY2P-KYap3w/1/public/full?alt=json";
+    
+
     $("#theme-btn").on('click',function(){     
         if(theme === 'dark'){
             $('link[href="css/coromon-pv-dark.css"]').attr('href','css/coromon-pv-light.css');
@@ -20,5 +24,49 @@ $(document).ready(function(){
             theme = 'dark';
             sessionStorage.setItem('theme','dark');
         }
-    })
+    });
+
+    $("#reset").click(function(){
+        $("#currentxp").val("");
+        $("#xpnext").val("");
+        $("#pl").val("");
+        $(".result").css("display","none");
+        $("#messages").css("display","none")
+    });
+
+    $("#submit").click(function(){
+        var currXp = parseInt($("#currentxp").val());
+        var nextXp = parseInt($("#xpnext").val());
+        var pl = parseInt($("#pl").val());
+        if(Number.isInteger(currXp)&&Number.isInteger(nextXp)&&Number.isInteger(pl)){
+            $("#messages").css("display","none");
+            var xp = currXp+nextXp;
+            $.getJSON(link,function(data){
+                var datas = data.feed.entry;
+                var nbCol = 22;
+                var tab = [];
+                var result = 0;
+                var content;
+                for(var i = 1;i<22;i++){
+                  content = datas[nbCol*(pl+1)+i].content.$t;
+                  content = content.replace(/\s/g, "");
+                  if(parseInt(content) === xp){
+                      result = i;
+                  }
+                }
+                
+                if(result != 0){
+                    $("#pv").val(result);
+                    $(".result").css("display","block");
+                }else{
+                    $("#messages span").html("Potential Value introuvable !")
+                    $("#messages").css("display","block");
+                }
+            });
+        }else{
+            $("#messages span").html("Les valeurs ne sont pas toutes entières.");
+            $("#messages").css("display","block");
+
+        }
+    });
 });
