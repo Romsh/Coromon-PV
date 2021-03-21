@@ -1,0 +1,85 @@
+﻿body{
+    background-color: #333;
+}
+
+/*Banner*/
+.navbar-header a{
+    font-size:1.05rem;
+}
+.app-title{
+    font-weight: bold;
+    color: #d8d8d8;
+}
+
+#banner{
+    height:4rem;
+}
+.navbox{
+    padding: 1rem 1rem 1rem 0.5rem;
+    background-color: rgb(32, 32, 32);
+}
+
+/*Main box*/
+.box-container{
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+#main-box{
+    margin-left:auto;
+    margin-right:auto;
+}
+.box{
+    width:35rem;
+    display:block;
+    padding: 2rem 2rem 0rem 1rem;
+    color: #d8d8d8;
+    background-color: rgb(32, 32, 32);
+}
+
+.box .input-group-text{
+    background-color: #a8a8a8;
+    border-color:#505050;
+}
+
+.tleft{
+    text-align: right;
+    padding-right:0.5rem;
+}
+.boutons{
+    text-align: right;
+}
+
+.result{
+    height:15rem;
+    width:10rem;
+    padding-top:1rem;
+    text-align: center;
+    font-size: 7.5rem;
+    background-color: rgb(42, 42, 42);
+}
+.result input{
+    width:8rem;
+    height: 13.5rem;
+    border:none;
+    text-align: center;
+    background-color: rgb(42, 42, 42);
+}
+
+.theme-dark{
+    color:#d8d8d8;
+}
+.theme-light{
+    display:none;
+    color:#333;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

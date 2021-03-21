@@ -1,9 +1,13 @@
-﻿/*Banner*/
+﻿body{
+    background-color: rgb(240, 240, 240);
+}
+/*Banner*/
 .navbar-header a{
     font-size:1.05rem;
 }
 .app-title{
     font-weight: bold;
+    color: #2c2c2c;
 }
 
 #banner{
@@ -11,6 +15,7 @@
 }
 .navbox{
     padding: 1rem 1rem 1rem 0.5rem;
+    background-color: rgb(177, 177, 177);
 }
 
 /*Main box*/
@@ -18,11 +23,16 @@
     padding: 2rem 2rem 2rem 2rem;
 }
 
+#main-box{
+    margin-left:auto;
+    margin-right:auto;
+}
 .box{
     width:35rem;
     display:block;
     padding: 2rem 2rem 0rem 1rem;
-    margin-left:30%;
+    color: #1b1b1b;
+    background-color: rgb(177, 177, 177);
 }
 
 .tleft{
@@ -34,72 +44,29 @@
 }
 
 .result{
-    height:15.7rem;
+    height:15rem;
     width:10rem;
     padding-top:1rem;
     text-align: center;
     font-size: 7.5rem;
+    background-color: rgb(207, 207, 207);
 }
 .result input{
     width:8rem;
     height: 13.5rem;
     border:none;
     text-align: center;
+    color:#2c2c2c; 
+    background-color: rgb(207, 207, 207);
 }
 
-
-/*DARK THEME*/
 .theme-dark{
     display:none;
     color:#d8d8d8;
 }
-.body-dark{
-    background-color: #333;
-}
-.app-title-dark{
-    color: #d8d8d8;
-}
-.navbox-dark{
-    background-color: rgb(32, 32, 32);
-}
-.box-dark{
-    color: #d8d8d8;
-    background-color: rgb(32, 32, 32);
-}
-.box-dark .input-group-text{
-    background-color: #d8d8d8;
-}
-.result-dark{
-    background-color: rgb(42, 42, 42);
-}
-.result-dark input{
-    background-color: rgb(42, 42, 42);
-}
 
-
-/*LIGHT THEME*/
 .theme-light{
     color:#333;
-}
-.body-light{
-    background-color: rgb(240, 240, 240);
-}
-.app-title-light{
-    color: #2c2c2c;
-}
-.navbox-light{
-    background-color: rgb(177, 177, 177);
-}
-.box-light{
-    color: #1b1b1b;
-    background-color: rgb(177, 177, 177);
-}
-.result-light{
-    background-color: rgb(207, 207, 207);
-}
-.result-light input{
-    color:#2c2c2c; 
-    background-color: rgb(207, 207, 207);
 }
 
 
