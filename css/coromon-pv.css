@@ -1,0 +1,115 @@
+﻿/*Banner*/
+.navbar-header a{
+    font-size:1.05rem;
+}
+.app-title{
+    font-weight: bold;
+}
+
+#banner{
+    height:4rem;
+}
+.navbox{
+    padding: 1rem 1rem 1rem 0.5rem;
+}
+
+/*Main box*/
+.box-container{
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.box{
+    width:35rem;
+    display:block;
+    padding: 2rem 2rem 0rem 1rem;
+    margin-left:30%;
+}
+
+.tleft{
+    text-align: right;
+    padding-right:0.5rem;
+}
+.boutons{
+    text-align: right;
+}
+
+.result{
+    height:15.7rem;
+    width:10rem;
+    padding-top:1rem;
+    text-align: center;
+    font-size: 7.5rem;
+}
+.result input{
+    width:8rem;
+    height: 13.5rem;
+    border:none;
+    text-align: center;
+}
+
+
+/*DARK THEME*/
+.theme-dark{
+    display:none;
+    color:#d8d8d8;
+}
+.body-dark{
+    background-color: #333;
+}
+.app-title-dark{
+    color: #d8d8d8;
+}
+.navbox-dark{
+    background-color: rgb(32, 32, 32);
+}
+.box-dark{
+    color: #d8d8d8;
+    background-color: rgb(32, 32, 32);
+}
+.box-dark .input-group-text{
+    background-color: #d8d8d8;
+}
+.result-dark{
+    background-color: rgb(42, 42, 42);
+}
+.result-dark input{
+    background-color: rgb(42, 42, 42);
+}
+
+
+/*LIGHT THEME*/
+.theme-light{
+    color:#333;
+}
+.body-light{
+    background-color: rgb(240, 240, 240);
+}
+.app-title-light{
+    color: #2c2c2c;
+}
+.navbox-light{
+    background-color: rgb(177, 177, 177);
+}
+.box-light{
+    color: #1b1b1b;
+    background-color: rgb(177, 177, 177);
+}
+.result-light{
+    background-color: rgb(207, 207, 207);
+}
+.result-light input{
+    color:#2c2c2c; 
+    background-color: rgb(207, 207, 207);
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
