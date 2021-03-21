@@ -56,23 +56,23 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Current XP</span>
                     </div>
-                    <input type="number" class="form-control" id="currentxp" aria-label="currentxp" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" id="currentxp" aria-label="currentxp" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">XP to next Portential level</span>
                     </div>
-                    <input type="number" class="form-control" id="xpnext" aria-label="xpnext" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" id="xpnext" aria-label="xpnext" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon1">Potential Level</span>
                     </div>
-                    <input type="number" class="form-control" id="pl" aria-label="pl" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" id="pl" aria-label="pl" aria-describedby="basic-addon1">
                 </div>
 
                 <div class="boutons">
-                    <button class="btn boutons">
+                    <button class="btn boutons" id="reset">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-arrow-repeat" viewBox="0 0 16 16" color="white">
                             <path
@@ -81,7 +81,7 @@
                                 d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
                         </svg>
                     </button>
-                    <button class="btn boutons">
+                    <button class="btn boutons" id="submit">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                             class="bi bi-arrow-right-circle" viewBox="0 0 16 16" color="white">
                             <path fill-rule="evenodd"
@@ -91,9 +91,9 @@
                 </div>
             </div>
             <div class="result rounded result-light">
-                <input id="pv" type="text" value="21" readonly>
+                <input id="pv" type="text" readonly>
             </div>
-            <div class="messages alert">Ceci est un message</div>
+            <div id="messages" class="messages alert alert-danger alert-dismissible fade show" role="alert"><span></span><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
         </div>
     </div>
 </body>
@@ -105,3 +105,4 @@
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
 <script src="js/coromon-pv.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
