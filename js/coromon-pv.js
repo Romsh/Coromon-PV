@@ -56,7 +56,7 @@ $(document).ready(function(){
                 }
                 
                 if(result != 0){
-                    $("#pv").val(result);
+                    $("#pv").html(result);
                     $(".result").css("display","block");
                 }else{
                     $("#messages span").html("Potential Value introuvable !")

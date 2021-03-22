@@ -48,19 +48,24 @@
 .result{
     height:15rem;
     width:10rem;
-    padding-top:0.5rem;
+    padding-left:0rem;
     text-align: center;
     font-size: 7.5rem;
     background-color: rgb(207, 207, 207);
-    display:none;
 }
-.result input{
-    width:8rem;
+.result span{
     height: 13.5rem;
-    border:none;
     text-align: center;
     color:#2c2c2c; 
     background-color: rgb(207, 207, 207);
+}
+
+.pvTitle{
+    color: #2c2c2c;
+    font-size:1rem;
+    width:4rem;
+    padding-top:0;
+    margin:0 auto 0 auto;
 }
 
 .theme-dark{
