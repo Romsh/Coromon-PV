@@ -11,7 +11,7 @@ if(theme === null){
 $(document).ready(function(){
 
     var link = "https://spreadsheets.google.com/feeds/cells/14tV5IOzdzhvVspUqfyUPmjf_hRN1Q9tuQY2P-KYap3w/1/public/full?alt=json";
-    
+    var regex = /^\d*[.]?\d*$/;
 
     $("#theme-btn").on('click',function(){     
         if(theme === 'dark'){
@@ -23,6 +23,42 @@ $(document).ready(function(){
             $('link[href="css/coromon-pv-light.css"]').attr('href','css/coromon-pv-dark.css');
             theme = 'dark';
             sessionStorage.setItem('theme','dark');
+        }
+    });
+    
+    $('#currentxp').keypress(function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!($.inArray(k,a)>=0)){
+            e.preventDefault();
+        }
+    });
+
+    $('#xpnext').keypress(function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!($.inArray(k,a)>=0)){
+            e.preventDefault();
+        }
+    });
+
+    $('#pl').keypress(function(e) {
+        var a = [];
+        var k = e.which;
+
+        for (i = 48; i < 58; i++)
+            a.push(i);
+
+        if (!($.inArray(k,a)>=0)){
+            e.preventDefault();
         }
     });
 
@@ -70,3 +106,12 @@ $(document).ready(function(){
         }
     });
 });
+
+function isNumber(event){
+    var keycode = event.keycode;
+    if(keycode>48 && keycode<57){
+        return true;
+    }else{
+        return false;
+    }
+}
