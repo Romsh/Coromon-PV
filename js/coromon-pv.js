@@ -61,6 +61,10 @@ $(document).ready(function(){
             e.preventDefault();
         }
     });
+    
+    $("#helpModal").on('show.bs.modal', function(){
+        $("#help").focus();
+    });
 
     $("#reset").click(function(){
         $("#currentxp").val("");
