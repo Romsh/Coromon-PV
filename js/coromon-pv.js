@@ -99,12 +99,12 @@ $(document).ready(function(){
                     $("#pv").html(result);
                     $(".result").css("display","block");
                 }else{
-                    $("#messages span").html("Potential Value introuvable !")
+                    $("#messages span").html("Potential Value not found ! Some input are probably incorrect.")
                     $("#messages").css("display","block");
                 }
             });
         }else{
-            $("#messages span").html("Les valeurs ne sont pas toutes entières.");
+            $("#messages span").html("Values must be integer.");
             $("#messages").css("display","block");
 
         }
