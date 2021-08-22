@@ -86,8 +86,8 @@ $(document).ready(function(){
                 var tab = [];
                 var result = 0;
                 var content;
-                datas = data[pl.toString()]; //Getting the right row from the json
-                
+                datas = data[pl+1]; //Getting the right row from the json
+                console.log(datas);
                 for(var i=1;i<22;i++){
                     if(datas[i] === xp){
                         result = i;
