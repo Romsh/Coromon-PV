@@ -10,7 +10,7 @@ if(theme === null){
 
 $(document).ready(function(){
 
-    var link = "https://spreadsheets.google.com/feeds/cells/14tV5IOzdzhvVspUqfyUPmjf_hRN1Q9tuQY2P-KYap3w/1/public/full?alt=json";
+    var link = "https://romsh.github.io/Coromon-PV/data/potentials.json";
     var regex = /^\d*[.]?\d*$/;
 
     $("#theme-btn").on('click',function(){     
@@ -82,19 +82,18 @@ $(document).ready(function(){
             $("#messages").css("display","none");
             var xp = currXp+nextXp;
             $.getJSON(link,function(data){
-                var datas = data.feed.entry;
-                var nbCol = 22;
+                var nbCol = 21;
                 var tab = [];
                 var result = 0;
                 var content;
-                for(var i = 1;i<22;i++){
-                  content = datas[nbCol*(pl+1)+i].content.$t;
-                  content = content.replace(/\s/g, "");
-                  if(parseInt(content) === xp){
-                      result = i;
-                  }
-                }
+                datas = data[pl.toString()]; //Getting the right row from the json
                 
+                for(var i=1;i<22;i++){
+                    if(datas[i] === xp){
+                        result = i;
+                    }
+                }
+
                 if(result != 0){
                     $("#pv").html(result);
                     $(".result").css("display","block");
