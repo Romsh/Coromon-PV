@@ -13,7 +13,7 @@ $(document).ready(function(){
     var link = "https://romsh.github.io/Coromon-PV/data/potentials.json";
     var regex = /^\d*[.]?\d*$/;
 
-    $("#theme-btn").on('click',function(){     
+    $("#theme-btn").on('click',function(){
         if(theme === 'dark'){
             $('link[href="css/coromon-pv-dark.css"]').attr('href','css/coromon-pv-light.css');
             theme = 'light';
@@ -25,8 +25,8 @@ $(document).ready(function(){
             sessionStorage.setItem('theme','dark');
         }
     });
-    
-    $('#currentxp').keypress(function(e) {
+
+        $('#currentxp').keypress(function(e) {
         var a = [];
         var k = e.which;
 
