@@ -1,136 +1,69 @@
 ﻿<!doctype html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <title>CPV Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/coromon-pv-dark.css">
-
-</head>
-
-<body class="body-light">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-static-top navbox navbox-light">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="">
-                    <span>
-                        <img src="images/kirby-icon.png">
-                    </span>
-                    <span class="app-title app-title-light">Coromon Potential Value Calculator</span>
-                </a>
+    <head>
+        <meta charset="utf-8">
+        <title>Coromon Location</title>
+        <link rel="stylesheet" href="css/coromon-pv.css">
+        <link rel="shortcut icon" href="#">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="logoRomsh"><img src="images/kirby-icon.png"/></div>
+                <div class="logoCoromon"><img src="images/logo.png" /></div>
             </div>
-            <div id="theme-btn" class="float-right">
-                <div class="theme-light">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
-                        <path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
-                    </svg>
+            <div class="navigator">
+                <ul>
+                    <a href="https://romsh.github.io/Coromon-PV/"><li>Coromon Potential</li></a>
+                    <a href="https://romsh.github.io/Coromon-Location/"><li>Coromon Location</li></a>
+                </ul>
+            </div>
+
+
+            <div class="container">
+                <div class="form">
+                    <div class="form-line">
+                        <label for="currentXp" class="labelCX">Current XP</label><input name="currentXp" id="currentxp" type="number" pattern="[0-9]+" />
+                    </div>
+                    <div class="form-line">
+                        <label for="xpNext" class="labelXN">XP to next Portential level</label><input name="xpNext" id="xpnext" type="number" pattern="[0-9]+"/>
+                    </div>
+                    <div class="form-line">
+                        <label for="potentialLvl" class="labelPL">Potential Level</label><input name="potentialLvl" id="pl" type="number" pattern="[0-9]+"/>
+                    </div>
+                    <div class="buttons">
+                        <button id="help">?</button>
+                        <button id="reset"><img src="./images/resetIcon.png"></button>
+                        <button id="submit"><img src="./images/submitIcon.png"></button>
+                    </div>
                 </div>
-                <div class="theme-dark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
-                        <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
+                <div class="result">
+                    <div class="pvTitle">Potential</div>
+                    <span id="pv">21</span>
+                </div>
+            </div>
+            <div id="errorModal">
+                <div id="messages">
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="helpModal">
+                <div>
+                    <img src="./images/help_exp.png">
+                    <p><span class="red"></span> : Current XP of your Coromon</p>
+                    <p><span class="blue"></span> : XP to next Potential level</p>
+                </div>
+                <div>
+                    <img src="./images/help_pl.png">
+                    <p>Hold LMB or Y to show this</p>
+                    <p><span class="yellow"></span> : XP to next Potential level</p>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <!-- Main frame -->
-    <div class="container-fluid">
-        <div id="main-box" class="row box-container">
-
-            <!-- BOX 1-->
-            <div class="box box-light rounded">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Current XP</span>
-                    </div>
-                    <input type="number" class="form-control" id="currentxp" pattern="[0-9]+" aria-label="currentxp" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">XP to next Portential level</span>
-                    </div>
-                    <input type="number" class="form-control" id="xpnext" aria-label="xpnext" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Potential Level</span>
-                    </div>
-                    <input type="number" class="form-control" id="pl" aria-label="pl" aria-describedby="basic-addon1">
-                </div>
-
-                <div class="boutons">
-                    <button class="btn boutons" data-bs-toggle="modal" data-bs-target="#helpModal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16"  color="white">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                        </svg>
-                    </button>
-                    <button class="btn boutons" id="reset">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-arrow-repeat" viewBox="0 0 16 16" color="white">
-                            <path
-                                d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
-                            <path fill-rule="evenodd"
-                                d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
-                        </svg>
-                    </button>
-                    <button class="btn boutons" id="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                            class="bi bi-arrow-right-circle" viewBox="0 0 16 16" color="white">
-                            <path fill-rule="evenodd"
-                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="result rounded result-light">
-                <div class="pvTitle">Potential</div>
-                <span id="pv"></span>
-            </div>
-            <div id="messages" class="messages alert alert-danger alert-dismissible fade show" role="alert"><span></span><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
-        </div>
-    </div>
-    
-    <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Help to find information</h5>
-              <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-6">
-                    <div>
-                        <span class="foo red"></span> : CurrentXP<br>
-                        <span class="foo blue mb-1"></span> : XP to Next PL <br>
-                    </div>
-                    <img src="images/help_exp.png">
-                </div>
-                <div class="col-6">
-                    <span>To get this, you need to click on the statistics</span><br>
-                    <span class="foo yellow mb-1"></span> : Potential Level<br>
-                    <img src="images/help_pl.png">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-</body>
+    </body>
 
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
-    crossorigin="anonymous"></script>
- 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.3/xlsx.full.min.js"></script>
-<script src="js/coromon-pv.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Jquery -->
+<script src="./js/coromon-pv.js"></script>
