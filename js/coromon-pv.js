@@ -1,30 +1,6 @@
-﻿var theme = sessionStorage.getItem('theme');
-
-if(theme === null){
-    theme = 'light';
-    sessionStorage.setItem('theme','light');
-}else if(theme === 'dark'){
-    $('link[href="css/coromon-pv-light.css"]').attr('href','css/coromon-pv-dark.css');
-}
-
-
-$(document).ready(function(){
-
-    var link = "https://romsh.github.io/Coromon-PV/data/potentials.json";
+﻿$(document).ready(function(){
     var regex = /^\d*[.]?\d*$/;
-
-    $("#theme-btn").on('click',function(){
-        if(theme === 'dark'){
-            $('link[href="css/coromon-pv-dark.css"]').attr('href','css/coromon-pv-light.css');
-            theme = 'light';
-            sessionStorage.setItem('theme','light');
-
-        }else if(theme === 'light'){
-            $('link[href="css/coromon-pv-light.css"]').attr('href','css/coromon-pv-dark.css');
-            theme = 'dark';
-            sessionStorage.setItem('theme','dark');
-        }
-    });
+    var helpM = false;
 
         $('#currentxp').keypress(function(e) {
         var a = [];
@@ -62,9 +38,6 @@ $(document).ready(function(){
         }
     });
 
-    $("#helpModal").on('show.bs.modal', function(){
-        $("#help").focus();
-    });
 
     $("#reset").click(function(){
         $("#currentxp").val("");
@@ -75,37 +48,24 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
-        var currXp = parseInt($("#currentxp").val());
-        var nextXp = parseInt($("#xpnext").val());
-        var pl = parseInt($("#pl").val());
-        if(Number.isInteger(currXp)&&Number.isInteger(nextXp)&&Number.isInteger(pl)){
-            $("#messages").css("display","none");
-            var xp = currXp+nextXp;
-            $.getJSON(link,function(data){
-                var nbCol = 21;
-                var tab = [];
-                var result = 0;
-                var content;
-                datas = data[pl+1]; //Getting the right row from the json
-                console.log(datas);
-                for(var i=1;i<22;i++){
-                    if(datas[i] === xp){
-                        result = i;
-                    }
-                }
+        submit();
+    });
 
-                if(result != 0){
-                    $("#pv").html(result);
-                    $(".result").css("display","block");
-                }else{
-                    $("#messages span").html("Potential Value not found ! Some input are probably incorrect.")
-                    $("#messages").css("display","block");
-                }
-            });
-        }else{
-            $("#messages span").html("Values must be integer.");
-            $("#messages").css("display","block");
+    $("input").keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode = 13){
+            submit();
+        }
+    })
 
+    $("#help").click(function(){
+        $("#helpModal").css("display","flex");
+    });
+
+    $("body").click(function(e){
+        var container = $(".container");
+        if(!container.is(e.target)&&container.has(e.target).length === 0&&e.target.id != "helpModal"){
+            $("#helpModal").css("display","none");
         }
     });
 });
@@ -116,5 +76,43 @@ function isNumber(event){
         return true;
     }else{
         return false;
+    }
+}
+
+function submit(){
+
+    var link = "https://romsh.github.io/Coromon-PV/data/potentials.json";
+    var currXp = parseInt($("#currentxp").val());
+    var nextXp = parseInt($("#xpnext").val());
+    var pl = parseInt($("#pl").val());
+    if(Number.isInteger(currXp)&&Number.isInteger(nextXp)&&Number.isInteger(pl)){
+        $("#messages").css("display","none");
+        var xp = currXp+nextXp;
+        $.getJSON(link,function(data){
+            var nbCol = 21;
+            var tab = [];
+            var result = 0;
+            var content;
+            datas = data[pl+1]; //Getting the right row from the json
+            //console.log(datas);
+            for(var i=1;i<22;i++){
+                if(datas[i] === xp){
+                    result = i;
+                }
+            }
+
+            if(result != 0){
+                $("#pv").html(result);
+                $(".result").css("display","block");
+            }else{
+                $("#messages span").html("Potential Value not found ! Some input are probably incorrect.")
+                $("#messages").css("display","block");
+                $(".result").css("display","none");
+            }
+        });
+    }else{
+        $("#messages span").html("Values must be integer.");
+        $("#messages").css("display","block");
+
     }
 }
