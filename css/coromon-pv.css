@@ -1,0 +1,362 @@
+﻿/* General Settings */
+@font-face {
+    font-family: "Press Start";
+    src: url("../font/prstartk.ttf") format("woff");
+}
+
+
+@media (min-width: 576px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+body{
+    font-family: "Press Start";
+    color:white;
+    font-size:12px;
+    background-color: rgb(32, 32, 32);
+    text-shadow: 1px 1px 1px black;
+}
+
+.wrapper{
+    width: 50rem;
+    height:auto;
+    margin: auto;
+    padding:0;
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 100px 35px auto;
+}
+
+/* Header including coromon and Romsh logo */
+.header{
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding:auto;
+
+    border-width:16px;
+    border-style:solid;
+    border-image: url("../images/Coromon_box_2px.png");
+    border-image-slice: 8 fill;
+    border-width: 8px;
+    position: relative;
+}
+
+.logoCoromon{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-start: 1;
+    grid-column: 2/3;
+
+    text-align: center;
+}
+
+.logoCoromon img{
+    object-fit: contain;
+    width:30%;
+    margin:auto;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logoRomsh{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-start: 1;
+
+    width: auto;
+    margin: auto;
+    margin-left:50px;
+    text-align: center;
+
+}
+.logoRomsh img{
+    width:50px;
+    height:50px;
+    object-fit: contain;
+}
+
+
+
+
+/* Coromon github app menu */
+
+.navigator{
+    grid-column: 1;
+    grid-row: 2;
+    margin:0;
+    padding:0;
+}
+
+.navigator ul{
+    padding:0 0 0 0;
+    margin:0;
+    display:flex;
+    list-style:none;
+}
+
+.navigator ul li{
+    display:inline-block;
+    padding-left:5px;
+    border-style:solid;
+    border-image: url("../images/Coromon_box_2px.png");
+    border-image-slice: 8 fill;
+    border-width:8px;
+    position: relative;
+    margin-left:0;
+}
+
+.navigator ul a{
+    color:white;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Coromon github app menu */
+.navigator{
+    grid-column: 1;
+    grid-row: 2;
+    margin:0;
+    padding:0;
+}
+
+.navigator ul{
+    padding:0 0 0 0;
+    margin:0;
+    display:flex;
+    list-style:none;
+}
+
+.navigator ul li{
+    display:inline-block;
+    padding-left:5px;
+    border-style:solid;
+    border-image: url("../images/Coromon_box_2px.png");
+    border-image-slice: 8 fill;
+    border-width:8px;
+    position: relative;
+    margin-left:0;
+}
+
+.navigator ul a{
+    color:white;
+    outline: none;
+    text-decoration: none;
+}
+
+/* Main Container */
+.container{
+    padding:10px;
+    grid-column: 1;
+    grid-row: 3;
+    width:97%;
+    display:flex;
+}
+
+.form{
+    margin:auto;
+    width:38rem;
+    border-style: solid;
+    border-image: url("../images/grey_box_fancy.png");
+    border-image-slice: 100%;
+    border-image-slice: 8 fill;
+    border-width: 8px;
+    position:relative;
+}
+
+.form-line{
+    margin:0.6rem;
+    display:flex;
+}
+
+.form-line label{
+    border-style: solid;
+    padding: 0.3rem;
+    border-image: url("../images/Coromon_box_1px.png");
+    border-image-slice: 100%;
+    border-image-slice: 4 fill;
+    border-width: 4px;
+    font-size:11px;
+}
+
+.labelCX{
+    width:9rem;
+}
+
+.labelXN{
+    width:42rem;
+}
+
+.labelPL{
+    width:15.5rem;
+}
+
+.form-line input{
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #0b0f25;
+    color: white;
+    font-family: "Press Start";
+    width:100%;
+}
+
+/* hide input arrows*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.buttons{
+    margin-right:0.5rem;
+    margin-bottom:0.3rem;
+    text-align:right;
+}
+
+.buttons button{
+    font-family: "Press Start";
+    width:2rem;
+    height:2rem;
+    text-align:center;
+    background-color: rgb(32, 32, 32);
+}
+
+#reset{
+    border-style: solid;
+    border-image: url("../images/Red_box_1px.png");
+    border-image-slice: 100%;
+    border-image-slice: 4 fill;
+    border-width: 4px;
+}
+
+#submit{
+    border-style: solid;
+    border-image: url("../images/Coromon_box_1px.png");
+    border-image-slice: 100%;
+    border-image-slice: 4 fill;
+    border-width: 4px;
+
+}
+
+#help{
+    border-style: solid;
+    border-image: url("../images/Coromon_box_1px.png");
+    border-image-slice: 100%;
+    border-image-slice: 4 fill;
+    border-width: 4px;
+    color:white;
+}
+
+.result{
+    border:1px solid red;
+    padding-top:0.2rem;
+    width:100%;
+    border-style: solid;
+    border-image: url("../images/grey_box.png");
+    border-image-slice: 100%;
+    border-image-slice: 8 fill;
+    border-width: 8px;
+    display:none;
+}
+
+.pvTitle{
+    display:inline-block;
+    color: white;
+    font-size:0.8rem;
+    padding:0.2rem;
+    text-align: center;
+    width:90%;
+    border-style: solid;
+    border-image: url("../images/Coromon_box_1px.png");
+    border-image-slice: 100%;
+    border-image-slice: 4 fill;
+}
+
+#pv{
+    display:table-cell;
+    vertical-align: middle;
+    height:8rem;
+    width:50%;
+    text-align: center;
+    font-size:53px;
+}
+
+#errorModal{
+    margin:0 auto 0 auto;
+}
+
+#messages{
+    margin-top: 2px;
+    border-style:solid;
+    border-image: url("../images/grey_box_fancy.png");
+    border-image-slice: 8 fill;
+    border-width:8px;
+    display:inline-block;
+    display: none;
+}
+
+#messages span{
+    display:inline-block;
+    background-color:#0b0f25;
+    height:0.9rem;
+    border-width:1px;
+    border-radius: 3px;
+    border-color: rgb(184, 184, 184);
+    border-style: solid;
+    color:red;
+    font-family: "Press Start";
+    padding-top:0.2rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    margin:auto;
+}
+
+
+#helpModal{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    margin-top: 2px;
+    border-style:solid;
+    border-image: url("../images/grey_box_fancy.png");
+    border-image-slice: 8 fill;
+    border-width:8px;
+}
+
+#helpModal div{
+    margin:1rem;
+    height:15.1rem;
+}
+
+#helpModal div p span{
+    width:15px;
+    height:15px;
+    border-radius: 2px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.yellow{
+    background-color:yellow;
+}
+.blue{
+    background-color:blue;
+}
+.red{
+    background-color:red;
+}
